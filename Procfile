@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/SpringDemoBot-0.0.1-SNAPSHOT.jar --server.port=$PORT
+web: java -jar target/SpringDemoBot-0.0.1-SNAPSHOT.jar --server.port=$PORT
