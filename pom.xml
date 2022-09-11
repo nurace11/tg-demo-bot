@@ -68,6 +68,24 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${project.parent.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>build-info</goal>
+						</goals>
+						<configuration>
+							<additionalProperties>
+								<encoding.source>${project.build.sourceEncoding}</encoding.source>
+								<encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
+								<java.source>${maven.compiler.source}</java.source>
+								<java.target>${maven.compiler.target}</java.target>
+							</additionalProperties>
+						</configuration>
+					</execution>
+				</executions>
+<!--				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 
 				<executions>
 					<execution>
@@ -86,7 +104,7 @@
 				</executions>
 
 				<configuration>
-					<!--Делаем запускаемым для его запуска на удаленном linux сервере -->
+					&lt;!&ndash;Делаем запускаемым для его запуска на удаленном linux сервере &ndash;&gt;
 					<executable>true</executable>
 					<excludes>
 						<exclude>
@@ -94,7 +112,7 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
-				</configuration>
+				</configuration>-->
 			</plugin>
 		</plugins>
 	</build>
