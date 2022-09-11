@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
-@Slf4j
+//@Slf4j
 @Component // WebHookBot - каждый раз когда пользователь будет писать боту то бот сразу же будет уведомлен об этом (эффективен когда много пользователей)
            // LongPollingBot - сам периодически будет проверять пришли ли ему сообщения
 public class TelegramBot extends TelegramLongPollingBot {
@@ -63,7 +63,8 @@ public class TelegramBot extends TelegramLongPollingBot {
         try {
             this.execute(new SetMyCommands(listOfCommands, new BotCommandScopeDefault(), null));
         } catch (TelegramApiException e) {
-            log.error("Error setting bot's command list: " + e.getMessage());
+//            log.error("Error setting bot's command list: " + e.getMessage());
+            System.err.println("Error setting bot's command list: " + e.getMessage());
         }
     }
 
@@ -93,7 +94,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 }
             }
 
-            int status = 0;
+            int status;
             String message = update.getMessage().getText();
 
             if(currentUser == null) {
@@ -105,7 +106,8 @@ public class TelegramBot extends TelegramLongPollingBot {
                 sendMessage(chatId, msg);
 //                currentUser = new User();
 //                users.add(currentUser);
-                log.info("new user " + update.getMessage().getChat().getFirstName());
+//                log.info("new user " + update.getMessage().getChat().getFirstName());
+                System.out.println("new user " + update.getMessage().getChat().getFirstName());
                 registerUser(update.getMessage());
             } else {
 
@@ -222,7 +224,8 @@ public class TelegramBot extends TelegramLongPollingBot {
         // see all emojis on emojipedia.org. Листаем до раздела shortcodes :blush: (github, slack)
         String answer = EmojiParser.parseToUnicode("Hi, " + name + ", nice to meet you! " + " :blush:");
 //        String answer = "Hi, " + name + ", nice to meet you!";
-        log.info("Replied to user " + name);
+        System.out.println("Replied to user " + name);
+//        log.info("Replied to user " + name);
 
         sendMessage(chatId, answer);
     }
@@ -235,7 +238,8 @@ public class TelegramBot extends TelegramLongPollingBot {
         try {
             execute(message);
         } catch (TelegramApiException e) {
-            log.error("Error occurred " + e.getMessage());
+            System.err.println("Error occurred " + e.getMessage());
+//            log.error("Error occurred " + e.getMessage());
         }
     }
 
@@ -261,7 +265,8 @@ public class TelegramBot extends TelegramLongPollingBot {
             user.setRegisterDate(new Timestamp(System.currentTimeMillis()));
 
             userRepository.save(user);
-            log.info("user saved: " + user);
+//            log.info("user saved: " + user);
+            System.out.println("user saved: " + user);
         }
     }
 
