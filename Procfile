@@ -1,2 +1,1 @@
-
-worker: java -jar target
+worker: java -jar target/SpringDemoBot-1.0.jar
