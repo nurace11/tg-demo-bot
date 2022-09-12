@@ -1,1 +1,1 @@
-worker: java -jar target/SpringDemoBot-1.0.jar
+worker: java $JAVA_OPTS -jar target/SpringDemoBot-1.0.jar
