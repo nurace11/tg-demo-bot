@@ -84,6 +84,12 @@
 						</configuration>
 					</execution>
 				</executions>
+
+				<configuration>
+<!--					&lt;!&ndash;Делаем запускаемым для его запуска на удаленном linux сервере &ndash;&gt;-->
+					<executable>true</executable>
+				</configuration>
+
 <!--				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 
