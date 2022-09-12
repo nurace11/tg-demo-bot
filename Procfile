@@ -1,1 +1,1 @@
-web: java -jar target/tg-bot-1.0.jar
+worker: java -jar target/tg-bot-1.0.jar
