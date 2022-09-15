@@ -158,11 +158,11 @@ public class TelegramBot extends TelegramLongPollingBot {
                         }
                         break;
                     case 4:
-                        sendMessage(chatId,
-                                "Balance$: " + currentUser.getDollars() +
-                                        "\nGold: " + currentUser.getGold() + "" +
-                                        "\nPick axe power: " + currentUser.getPickAxePower() + "" +
-                                        "\nYour id: " + currentUser.getChatId());
+                        sendMessage(chatId, EmojiParser.parseToUnicode(
+                                ":dollar: Balance$: " + currentUser.getDollars() +
+                                        "\n:yellow_circle: Gold: " + currentUser.getGold() + "" +
+                                        "\n:pick:Pick axe power: " + currentUser.getPickAxePower() + "" +
+                                        "\n:memo: Your data : " + currentUser.getChatId()));
                         break;
                     case -1:
                         if(messageIsCommand(message)){
@@ -182,11 +182,11 @@ public class TelegramBot extends TelegramLongPollingBot {
                                     break;
                             }
                         } else {
-                            sendMessage(chatId,"Type a number." +
-                                    "\n1 - копать золото " +
-                                    "\n2 - продать золото " +
-                                    "\n3 - улучшить кирку " +
-                                    "\n4 - посмотреть инофрмацию (баланс) ");
+                            sendMessage(chatId,EmojiParser.parseToUnicode("Type a number." +
+                                    "\n1 - копать золото :yellow_circle:" +
+                                    "\n2 - продать золото :dollar:" +
+                                    "\n3 - улучшить кирку :pick:" +
+                                    "\n4 - посмотреть инофрмацию (баланс) :memo:"));
                         }
                         break;
                     default:
