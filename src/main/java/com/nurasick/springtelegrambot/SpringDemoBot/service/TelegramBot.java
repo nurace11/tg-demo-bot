@@ -160,7 +160,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     case 4:
                         sendMessage(chatId, EmojiParser.parseToUnicode(
                                 ":dollar: Balance$: " + currentUser.getDollars() +
-                                        "\n:yellow_circle: Gold: " + currentUser.getGold() + "" +
+                                        "\n:yellow: Gold: " + currentUser.getGold() + "" +
                                         "\n:pick:Pick axe power: " + currentUser.getPickAxePower() + "" +
                                         "\n:memo: Your data : " + currentUser.getChatId()));
                         break;
@@ -183,7 +183,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                             }
                         } else {
                             sendMessage(chatId,EmojiParser.parseToUnicode("Type a number." +
-                                    "\n1 - копать золото :yellow_circle:" +
+                                    "\n1 - копать золото :yellow:" +
                                     "\n2 - продать золото :dollar:" +
                                     "\n3 - улучшить кирку :pick:" +
                                     "\n4 - посмотреть инофрмацию (баланс) :memo:"));
